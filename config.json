@@ -1,0 +1,38 @@
+{
+    "window": {
+        "default_x": 300,
+        "default_y": 300,
+        "default_width": 180,
+        "default_height": 240
+    },
+    "animation": {
+        "frame_interval_ms": 250,
+        "idle_switch_min_ms": 5000,
+        "idle_switch_max_ms": 15000,
+        "idle_timeout_ms": 30000,
+        "idle_actions": ["idle", "walk", "sleepy"],
+        "actions": {
+            "idle":   {"frames": 4, "dir": "idle"},
+            "walk":   {"frames": 4, "dir": "walk"},
+            "wave":   {"frames": 3, "dir": "wave"},
+            "happy":  {"frames": 3, "dir": "happy"},
+            "sleepy": {"frames": 3, "dir": "sleepy"}
+        }
+    },
+    "bubble": {
+        "display_ms": 3000,
+        "lines": [
+            "护生安民，职责所在。",
+            "此乃天师之责。",
+            "休得僭越。",
+            "风雨如晦，鸡鸣不已。",
+            "麒麟踏火，不为己身。",
+            "终末之地，吾等前行。",
+            "静观其变。",
+            "天地有正气。",
+            "此路不通，请回吧。",
+            "庄方宜在此。"
+        ]
+    },
+    "mouse_proximity_px": 80
+}
