@@ -9,7 +9,15 @@ venv/
 .reasonix/
 .codegraph/
 assets/generated/
+data/
 *.log
+.env
+secrets.json
+characters/**/preview.png
+characters/**/ai_raw/
+__pycache__/
+*.pyc
+
 
 # OS / IDE
 .DS_Store

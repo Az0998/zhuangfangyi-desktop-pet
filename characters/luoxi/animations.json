@@ -1,0 +1,790 @@
+{
+  "idle_actions": [
+    "idle",
+    "curious",
+    "tail_wag"
+  ],
+  "chains": {
+    "greet_flow": [
+      "wave",
+      "happy"
+    ],
+    "wake_up": [
+      "stretch",
+      "curious"
+    ],
+    "praise_flow": [
+      "shy",
+      "tail_wag"
+    ],
+    "copy_react": [
+      "curious",
+      "think"
+    ],
+    "remind_flow": [
+      "alert",
+      "wave"
+    ]
+  },
+  "animations": {
+    "idle": {
+      "loop": true,
+      "duration": 2.2,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": 0,
+            "head": 0,
+            "tail": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ],
+            "torso": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "t": 0.5,
+          "rotations": {
+            "body": 2,
+            "head": 3,
+            "tail": 12
+          },
+          "offsets": {
+            "body": [
+              2,
+              -6
+            ],
+            "torso": [
+              0,
+              -6
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": 0,
+            "head": 0,
+            "tail": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ],
+            "torso": [
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    "blink": {
+      "loop": false,
+      "duration": 0.25,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "t": 0.45,
+          "rotations": {
+            "body": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    "walk": {
+      "loop": true,
+      "duration": 0.55,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": 6,
+            "leg_l": 28,
+            "leg_r": -28,
+            "arm_l": -30,
+            "arm_r": 30,
+            "tail": 18
+          },
+          "offsets": {
+            "body": [
+              -6,
+              -4
+            ],
+            "torso": [
+              0,
+              -4
+            ]
+          }
+        },
+        {
+          "t": 0.5,
+          "rotations": {
+            "body": -6,
+            "leg_l": -28,
+            "leg_r": 28,
+            "arm_l": 30,
+            "arm_r": -30,
+            "tail": -18
+          },
+          "offsets": {
+            "body": [
+              6,
+              -10
+            ],
+            "torso": [
+              0,
+              -10
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": 6,
+            "leg_l": 28,
+            "leg_r": -28,
+            "arm_l": -30,
+            "arm_r": 30,
+            "tail": 18
+          },
+          "offsets": {
+            "body": [
+              -6,
+              -4
+            ],
+            "torso": [
+              0,
+              -4
+            ]
+          }
+        }
+      ]
+    },
+    "wave": {
+      "loop": false,
+      "duration": 1.0,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": 0,
+            "arm_r": 0,
+            "head": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "t": 0.25,
+          "rotations": {
+            "body": -8,
+            "arm_r": -120,
+            "head": -10
+          },
+          "offsets": {
+            "body": [
+              4,
+              -8
+            ]
+          }
+        },
+        {
+          "t": 0.5,
+          "rotations": {
+            "body": -4,
+            "arm_r": -70,
+            "head": -4
+          },
+          "offsets": {
+            "body": [
+              2,
+              -4
+            ]
+          }
+        },
+        {
+          "t": 0.75,
+          "rotations": {
+            "body": -10,
+            "arm_r": -130,
+            "head": -12
+          },
+          "offsets": {
+            "body": [
+              5,
+              -10
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": 0,
+            "arm_r": 0,
+            "head": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    "happy": {
+      "loop": false,
+      "duration": 1.1,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": 0,
+            "tail": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "t": 0.2,
+          "rotations": {
+            "body": -4,
+            "tail": 40
+          },
+          "offsets": {
+            "body": [
+              0,
+              -22
+            ]
+          }
+        },
+        {
+          "t": 0.45,
+          "rotations": {
+            "body": 4,
+            "tail": -35
+          },
+          "offsets": {
+            "body": [
+              0,
+              -4
+            ]
+          }
+        },
+        {
+          "t": 0.7,
+          "rotations": {
+            "body": -3,
+            "tail": 30
+          },
+          "offsets": {
+            "body": [
+              0,
+              -18
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": 0,
+            "tail": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    "shy": {
+      "loop": false,
+      "duration": 1.3,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": 0,
+            "head": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "t": 0.35,
+          "rotations": {
+            "body": 12,
+            "head": 18,
+            "arm_l": 50
+          },
+          "offsets": {
+            "body": [
+              6,
+              4
+            ]
+          }
+        },
+        {
+          "t": 0.7,
+          "rotations": {
+            "body": 8,
+            "head": 12
+          },
+          "offsets": {
+            "body": [
+              4,
+              2
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": 0,
+            "head": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    "curious": {
+      "loop": true,
+      "duration": 1.8,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": -8,
+            "head": -12,
+            "tail": 10
+          },
+          "offsets": {
+            "body": [
+              -3,
+              -2
+            ]
+          }
+        },
+        {
+          "t": 0.5,
+          "rotations": {
+            "body": 8,
+            "head": 12,
+            "tail": -10
+          },
+          "offsets": {
+            "body": [
+              3,
+              -4
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": -8,
+            "head": -12,
+            "tail": 10
+          },
+          "offsets": {
+            "body": [
+              -3,
+              -2
+            ]
+          }
+        }
+      ]
+    },
+    "tail_wag": {
+      "loop": true,
+      "duration": 0.45,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": -4,
+            "tail": -40
+          },
+          "offsets": {
+            "body": [
+              -2,
+              0
+            ]
+          }
+        },
+        {
+          "t": 0.5,
+          "rotations": {
+            "body": 4,
+            "tail": 40
+          },
+          "offsets": {
+            "body": [
+              2,
+              -2
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": -4,
+            "tail": -40
+          },
+          "offsets": {
+            "body": [
+              -2,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    "sleepy": {
+      "loop": true,
+      "duration": 2.6,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": 10,
+            "head": 16
+          },
+          "offsets": {
+            "body": [
+              0,
+              8
+            ]
+          }
+        },
+        {
+          "t": 0.5,
+          "rotations": {
+            "body": 14,
+            "head": 20
+          },
+          "offsets": {
+            "body": [
+              0,
+              12
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": 10,
+            "head": 16
+          },
+          "offsets": {
+            "body": [
+              0,
+              8
+            ]
+          }
+        }
+      ]
+    },
+    "think": {
+      "loop": true,
+      "duration": 2.0,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": 6,
+            "head": 10,
+            "arm_r": -80
+          },
+          "offsets": {
+            "body": [
+              2,
+              -2
+            ]
+          }
+        },
+        {
+          "t": 0.5,
+          "rotations": {
+            "body": 8,
+            "head": 14,
+            "arm_r": -90
+          },
+          "offsets": {
+            "body": [
+              3,
+              -4
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": 6,
+            "head": 10,
+            "arm_r": -80
+          },
+          "offsets": {
+            "body": [
+              2,
+              -2
+            ]
+          }
+        }
+      ]
+    },
+    "stretch": {
+      "loop": false,
+      "duration": 1.2,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": 0,
+            "arm_l": 0,
+            "arm_r": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "t": 0.4,
+          "rotations": {
+            "body": -6,
+            "arm_l": -140,
+            "arm_r": 140
+          },
+          "offsets": {
+            "body": [
+              0,
+              -14
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": 0,
+            "arm_l": 0,
+            "arm_r": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    "sit": {
+      "loop": true,
+      "duration": 2.0,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": 8,
+            "leg_l": 50,
+            "leg_r": 50
+          },
+          "offsets": {
+            "body": [
+              0,
+              18
+            ]
+          }
+        },
+        {
+          "t": 0.5,
+          "rotations": {
+            "body": 6,
+            "leg_l": 50,
+            "leg_r": 50
+          },
+          "offsets": {
+            "body": [
+              0,
+              16
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": 8,
+            "leg_l": 50,
+            "leg_r": 50
+          },
+          "offsets": {
+            "body": [
+              0,
+              18
+            ]
+          }
+        }
+      ]
+    },
+    "jump": {
+      "loop": false,
+      "duration": 0.8,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": 4
+          },
+          "offsets": {
+            "body": [
+              0,
+              6
+            ]
+          }
+        },
+        {
+          "t": 0.28,
+          "rotations": {
+            "body": -6,
+            "arm_l": -40,
+            "arm_r": 40
+          },
+          "offsets": {
+            "body": [
+              0,
+              -42
+            ]
+          }
+        },
+        {
+          "t": 0.55,
+          "rotations": {
+            "body": 8
+          },
+          "offsets": {
+            "body": [
+              0,
+              -8
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    "alert": {
+      "loop": false,
+      "duration": 0.7,
+      "keyframes": [
+        {
+          "t": 0.0,
+          "rotations": {
+            "body": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "t": 0.3,
+          "rotations": {
+            "body": -6,
+            "ear_l": -20,
+            "ear_r": 20
+          },
+          "offsets": {
+            "body": [
+              0,
+              -10
+            ]
+          }
+        },
+        {
+          "t": 1.0,
+          "rotations": {
+            "body": 0
+          },
+          "offsets": {
+            "body": [
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

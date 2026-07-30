@@ -1,0 +1,68 @@
+{
+  "width": 220,
+  "height": 280,
+  "origin": { "x": 110, "y": 215 },
+  "bones": [
+    { "name": "root", "parent": null, "x": 0, "y": 0, "rotation": 0, "length": 0, "z": 0 },
+    {
+      "name": "torso", "parent": "root", "x": 0, "y": -42,
+      "rotation": 0, "length": 44, "z": 20,
+      "part": "torso", "pivot_x": 44, "pivot_y": 60
+    },
+    {
+      "name": "tail", "parent": "torso", "x": -22, "y": 22,
+      "rotation": -20, "length": 40, "z": 8,
+      "part": "tail", "pivot_x": 10, "pivot_y": 20
+    },
+    {
+      "name": "arm_l", "parent": "torso", "x": -34, "y": -20,
+      "rotation": 14, "length": 30, "z": 12,
+      "part": "arm_l", "pivot_x": 15, "pivot_y": 6
+    },
+    {
+      "name": "arm_r", "parent": "torso", "x": 34, "y": -20,
+      "rotation": -14, "length": 30, "z": 28,
+      "part": "arm_r", "pivot_x": 15, "pivot_y": 6
+    },
+    {
+      "name": "leg_l", "parent": "root", "x": -14, "y": -4,
+      "rotation": 5, "length": 36, "z": 10,
+      "part": "leg_l", "pivot_x": 13, "pivot_y": 2
+    },
+    {
+      "name": "leg_r", "parent": "root", "x": 14, "y": -4,
+      "rotation": -5, "length": 36, "z": 10,
+      "part": "leg_r", "pivot_x": 13, "pivot_y": 2
+    },
+    {
+      "name": "head", "parent": "torso", "x": 0, "y": -58,
+      "rotation": 0, "length": 30, "z": 40,
+      "part": "head", "pivot_x": 45, "pivot_y": 70
+    },
+    {
+      "name": "hood", "parent": "head", "x": 0, "y": -18,
+      "rotation": 0, "length": 12, "z": 35,
+      "part": "hood", "pivot_x": 55, "pivot_y": 55
+    },
+    {
+      "name": "ear_l", "parent": "head", "x": -26, "y": -36,
+      "rotation": -16, "length": 20, "z": 55,
+      "part": "ear_l", "pivot_x": 17, "pivot_y": 40
+    },
+    {
+      "name": "ear_r", "parent": "head", "x": 26, "y": -36,
+      "rotation": 16, "length": 20, "z": 55,
+      "part": "ear_r", "pivot_x": 17, "pivot_y": 40
+    },
+    {
+      "name": "face", "parent": "head", "x": 0, "y": 2,
+      "rotation": 0, "length": 8, "z": 50,
+      "part": "face", "pivot_x": 38, "pivot_y": 30
+    },
+    {
+      "name": "eyes", "parent": "face", "x": 0, "y": -8,
+      "rotation": 0, "length": 4, "z": 60,
+      "part": "eyes", "pivot_x": 32, "pivot_y": 14
+    }
+  ]
+}

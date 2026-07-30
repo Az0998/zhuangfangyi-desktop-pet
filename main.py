@@ -1,7 +1,8 @@
 """
-main.py — 庄方宜 Q 版桌面宠物 程序入口。
+终末地桌宠 — 程序入口。
 
-加载配置 → 初始化动画引擎 → 创建宠物窗口 → 系统托盘集成。
+双画风分层立绘 · 骨骼动作链 · AI 对话 · 剪贴板 · 日程提醒
+默认角色：洛茜（洛希）
 """
 
 from __future__ import annotations
@@ -12,125 +13,106 @@ from pathlib import Path
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon, QPixmap
-from PyQt5.QtWidgets import (
-    QAction,
-    QApplication,
-    QMenu,
-    QMessageBox,
-    QSystemTrayIcon,
-)
+from PyQt5.QtWidgets import QApplication, QMenu, QSystemTrayIcon
 
-from pet_animator import PetAnimator
-from pet_window import PetWindow
+from core.character import list_characters, load_character
+from core.skeletal_animator import SkeletalAnimator
+from ui.pet_window import PetWindow
 
 
 def load_config(path: Path) -> dict:
-    """从 JSON 文件加载配置。
-
-    Args:
-        path: 配置文件的路径。
-
-    Returns:
-        配置字典。
-    """
     with path.open("r", encoding="utf-8") as f:
         return json.load(f)
 
 
 def main() -> None:
     app = QApplication(sys.argv)
-    app.setApplicationName("庄方宜 Q版桌面宠物")
-    app.setQuitOnLastWindowClosed(False)  # 关闭窗口不退出，驻留托盘
+    app.setApplicationName("终末地桌宠")
+    app.setQuitOnLastWindowClosed(False)
 
-    # ---- 路径 ----
     base_dir = Path(__file__).resolve().parent
-    assets_dir = base_dir / "assets"
-    config_path = base_dir / "config.json"
+    config = load_config(base_dir / "config.json")
 
-    # ---- 加载配置 ----
-    config = load_config(config_path)
+    character_id = config.get("character_id", "luoxi")
+    art_style = config.get("art_style", "anime")
+    try:
+        character = load_character(character_id, base_dir, art_style=art_style)
+    except FileNotFoundError:
+        available = list_characters(base_dir)
+        if not available:
+            raise SystemExit("未找到任何角色包，请检查 characters/ 目录。")
+        character = load_character(available[0]["id"], base_dir, art_style=art_style)
 
-    # ---- 动画引擎 ----
-    animator = PetAnimator(assets_dir, config)
-
-    # ---- 宠物窗口 ----
-    window = PetWindow(animator, config)
+    tick_ms = int(config.get("animation", {}).get("tick_ms", 33))
+    animator = SkeletalAnimator(character, tick_ms=tick_ms)
+    window = PetWindow(animator, character, config, base_dir)
     window.show()
 
-    # ---- 系统托盘 ----
-    _setup_tray(app, window, assets_dir, config)
-
+    _setup_tray(app, window, character, base_dir)
     sys.exit(app.exec_())
 
 
-def _setup_tray(
-    app: QApplication,
-    window: PetWindow,
-    assets_dir: Path,
-    config: dict,
-) -> None:
-    """初始化系统托盘图标和菜单。
-
-    Args:
-        app: QApplication 实例。
-        window: 宠物窗口。
-        assets_dir: 资源目录路径。
-        config: 配置字典。
-    """
-    # 托盘图标——取第一帧或 assets 下的 tray.png
-    icon_path = assets_dir / "idle" / "frame_01.png"
-    icon = QIcon()
+def _setup_tray(app: QApplication, window: PetWindow, character, base_dir: Path) -> None:
+    icon_path = character.parts_dir / "head.png"
     if icon_path.exists():
         icon = QIcon(str(icon_path))
     else:
-        # 程序图标兜底
         pix = QPixmap(64, 64)
         pix.fill(Qt.GlobalColor.transparent)
         icon = QIcon(pix)
 
     tray = QSystemTrayIcon(icon, app)
-    tray.setToolTip("庄方宜 Q版桌面宠物")
+    tray.setToolTip(f"{character.name} · 终末地桌宠")
 
-    menu = QMenu()
+    def rebuild_menu() -> None:
+        menu = QMenu()
+        menu.addAction("显示/隐藏").triggered.connect(lambda: _toggle(window))
+        menu.addAction("和她聊天…").triggered.connect(window.open_chat)
+        menu.addAction("剪贴板历史…").triggered.connect(window.open_clipboard)
+        menu.addAction("日程 / 健康提醒…").triggered.connect(window.open_schedule)
+        menu.addSeparator()
 
-    show_action = menu.addAction("显示/隐藏")
-    show_action.triggered.connect(lambda: _toggle_window(window))
+        styles = menu.addMenu("画风")
+        for style in window._character.variants:
+            label = {"anime": "动漫版", "pixel": "像素版"}.get(style, style)
+            styles.addAction(label).triggered.connect(
+                lambda checked=False, s=style: window.set_art_style(s)
+            )
 
-    menu.addSeparator()
+        chars = menu.addMenu("更换角色")
+        for info in list_characters(base_dir):
+            chars.addAction(info["name"]).triggered.connect(
+                lambda checked=False, cid=info["id"]: window._switch_character(cid)
+            )
 
-    action_menu = menu.addMenu("切换动作")
-    action_names = list(config["animation"]["actions"].keys())
-    for name in action_names:
-        act = action_menu.addAction(name)
-        act.triggered.connect(lambda checked=False, n=name: window._switch_action(n))
+        menu.addSeparator()
+        menu.addAction("关于").triggered.connect(window._show_about)
+        menu.addAction("退出").triggered.connect(lambda: _quit(app, tray))
+        tray.setContextMenu(menu)
+        tray.setToolTip(f"{window._character.name} · {window._character.art_style}")
+        head = window._character.parts_dir / "head.png"
+        if head.exists():
+            tray.setIcon(QIcon(str(head)))
 
-    menu.addSeparator()
-
-    about_action = menu.addAction("关于")
-    about_action.triggered.connect(window._show_about)
-
-    exit_action = menu.addAction("退出")
-    exit_action.triggered.connect(lambda: _quit_app(app, tray))
-
-    tray.setContextMenu(menu)
+    rebuild_menu()
+    window.character_changed.connect(lambda _cid: rebuild_menu())
     tray.activated.connect(
-        lambda reason: _toggle_window(window) if reason == QSystemTrayIcon.ActivationReason.DoubleClick else None
+        lambda reason: _toggle(window)
+        if reason == QSystemTrayIcon.ActivationReason.DoubleClick
+        else None
     )
     tray.show()
 
 
-def _toggle_window(window: PetWindow) -> None:
-    """显示/隐藏宠物窗口。"""
+def _toggle(window: PetWindow) -> None:
     if window.isVisible():
         window.hide()
     else:
         window.show()
         window.raise_()
-        window.activateWindow()
 
 
-def _quit_app(app: QApplication, tray: QSystemTrayIcon) -> None:
-    """完全退出应用（移除托盘图标后退出）。"""
+def _quit(app: QApplication, tray: QSystemTrayIcon) -> None:
     tray.hide()
     app.quit()
 
