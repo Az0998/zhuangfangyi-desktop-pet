@@ -1,8 +1,8 @@
 {
-  "width": 227,
+  "width": 231,
   "height": 212,
   "origin": {
-    "x": 113,
+    "x": 115,
     "y": 200
   },
   "bones": [
@@ -18,10 +18,10 @@
     {
       "name": "tail",
       "parent": "root",
-      "x": -34.1,
-      "y": -62.99999999999999,
-      "rotation": -12,
-      "length": 40,
+      "x": -30.200000000000003,
+      "y": -57.6,
+      "rotation": -10,
+      "length": 36,
       "z": 5
     },
     {
@@ -33,32 +33,32 @@
       "length": 180,
       "z": 20,
       "part": "body",
-      "pivot_x": 77,
+      "pivot_x": 75,
       "pivot_y": 176
     },
     {
       "name": "ear_l",
       "parent": "body",
-      "x": -27.9,
-      "y": -140.4,
+      "x": -24.16,
+      "y": -136.8,
       "rotation": -8,
-      "length": 16,
+      "length": 14,
       "z": 40
     },
     {
       "name": "ear_r",
       "parent": "body",
-      "x": 27.9,
-      "y": -140.4,
+      "x": 24.16,
+      "y": -136.8,
       "rotation": 8,
-      "length": 16,
+      "length": 14,
       "z": 40
     },
     {
       "name": "torso",
       "parent": "body",
       "x": 0,
-      "y": -62.99999999999999,
+      "y": -61.2,
       "rotation": 0,
       "length": 10,
       "z": 21
@@ -67,7 +67,7 @@
       "name": "head",
       "parent": "body",
       "x": 0,
-      "y": -129.6,
+      "y": -125.99999999999999,
       "rotation": 0,
       "length": 10,
       "z": 30
@@ -102,37 +102,37 @@
     {
       "name": "arm_l",
       "parent": "body",
-      "x": -43.400000000000006,
-      "y": -81.0,
+      "x": -39.26,
+      "y": -75.6,
       "rotation": 0,
-      "length": 20,
+      "length": 18,
       "z": 15
     },
     {
       "name": "arm_r",
       "parent": "body",
-      "x": 43.400000000000006,
-      "y": -81.0,
+      "x": 39.26,
+      "y": -75.6,
       "rotation": 0,
-      "length": 20,
+      "length": 18,
       "z": 15
     },
     {
       "name": "leg_l",
       "parent": "root",
-      "x": -12.4,
+      "x": -12.08,
       "y": -14.4,
       "rotation": 0,
-      "length": 20,
+      "length": 16,
       "z": 10
     },
     {
       "name": "leg_r",
       "parent": "root",
-      "x": 12.4,
+      "x": 12.08,
       "y": -14.4,
       "rotation": 0,
-      "length": 20,
+      "length": 16,
       "z": 10
     }
   ]

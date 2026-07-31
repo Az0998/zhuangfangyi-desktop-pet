@@ -219,8 +219,12 @@ class SkeletalAnimator(QObject):
         pose = self._pose_at(self._current_action, self._elapsed)
         # 英雄全身图模式：把各关节动作烘焙到可见的 body 上
         has_body = "body" in self._parts and not self._parts["body"].isNull()
-        breath = math.sin(self._elapsed * 2.4) * (3.0 if has_body else 1.2)
-        sway = math.sin(self._elapsed * 1.7) * (1.5 if has_body else 0.0)
+        # 待机更灵动：呼吸 + 轻晃 + 偶尔小颠
+        breath = math.sin(self._elapsed * 2.6) * (3.6 if has_body else 1.2)
+        sway = math.sin(self._elapsed * 1.85) * (2.2 if has_body else 0.0)
+        if has_body and self._current_action in ("idle", "idle_sway", "curious"):
+            breath += math.sin(self._elapsed * 5.2) * 0.8
+            sway += math.sin(self._elapsed * 0.9) * 1.2
 
         if has_body:
             tx, ty = pose.offsets.get("torso", (0.0, 0.0))

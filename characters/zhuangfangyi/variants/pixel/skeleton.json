@@ -1,0 +1,139 @@
+{
+  "width": 175,
+  "height": 212,
+  "origin": {
+    "x": 87,
+    "y": 200
+  },
+  "bones": [
+    {
+      "name": "root",
+      "parent": null,
+      "x": 0,
+      "y": 0,
+      "rotation": 0,
+      "length": 0,
+      "z": 0
+    },
+    {
+      "name": "tail",
+      "parent": "root",
+      "x": -19.0,
+      "y": -57.6,
+      "rotation": -10,
+      "length": 36,
+      "z": 5
+    },
+    {
+      "name": "body",
+      "parent": "root",
+      "x": 0,
+      "y": 0,
+      "rotation": 0,
+      "length": 180,
+      "z": 20,
+      "part": "body",
+      "pivot_x": 47,
+      "pivot_y": 176
+    },
+    {
+      "name": "ear_l",
+      "parent": "body",
+      "x": -15.200000000000001,
+      "y": -136.8,
+      "rotation": -8,
+      "length": 14,
+      "z": 40
+    },
+    {
+      "name": "ear_r",
+      "parent": "body",
+      "x": 15.200000000000001,
+      "y": -136.8,
+      "rotation": 8,
+      "length": 14,
+      "z": 40
+    },
+    {
+      "name": "torso",
+      "parent": "body",
+      "x": 0,
+      "y": -61.2,
+      "rotation": 0,
+      "length": 10,
+      "z": 21
+    },
+    {
+      "name": "head",
+      "parent": "body",
+      "x": 0,
+      "y": -125.99999999999999,
+      "rotation": 0,
+      "length": 10,
+      "z": 30
+    },
+    {
+      "name": "hood",
+      "parent": "head",
+      "x": 0,
+      "y": 0,
+      "rotation": 0,
+      "length": 4,
+      "z": 29
+    },
+    {
+      "name": "face",
+      "parent": "head",
+      "x": 0,
+      "y": 8,
+      "rotation": 0,
+      "length": 4,
+      "z": 31
+    },
+    {
+      "name": "eyes",
+      "parent": "face",
+      "x": 0,
+      "y": 0,
+      "rotation": 0,
+      "length": 2,
+      "z": 32
+    },
+    {
+      "name": "arm_l",
+      "parent": "body",
+      "x": -24.7,
+      "y": -75.6,
+      "rotation": 0,
+      "length": 18,
+      "z": 15
+    },
+    {
+      "name": "arm_r",
+      "parent": "body",
+      "x": 24.7,
+      "y": -75.6,
+      "rotation": 0,
+      "length": 18,
+      "z": 15
+    },
+    {
+      "name": "leg_l",
+      "parent": "root",
+      "x": -7.6000000000000005,
+      "y": -14.4,
+      "rotation": 0,
+      "length": 16,
+      "z": 10
+    },
+    {
+      "name": "leg_r",
+      "parent": "root",
+      "x": 7.6000000000000005,
+      "y": -14.4,
+      "rotation": 0,
+      "length": 16,
+      "z": 10
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 # 终末地桌宠
 
-可替换角色包 · **anime / pixel 双画风分层立绘** · 骨骼动作链 · AI 对话 · **剪贴板历史** · **日程/健康提醒**。
+可替换角色包 · **anime / pixel 双画风** · 骨骼动作链 · AI 对话 · **剪贴板历史** · **日程/健康提醒**。
 
-默认角色：**洛茜**（洛希）。角色版权归鹰角网络，《明日方舟：终末地》相关仅供个人学习娱乐。
+内置角色：**洛茜**（终末地）· **庄方宜**（终末地）· **能天使**（明日方舟）。角色版权归鹰角网络，仅供个人学习娱乐。
 
 ---
 
@@ -10,11 +10,11 @@
 
 ```bash
 pip install -r requirements.txt
-python tools/generate_luoxi_art.py
+python tools/build_character_pack.py --all   # 重建洛茜/庄方宜/能天使
 python main.py
 ```
 
-`config.json` 中 `"art_style": "anime"` 或 `"pixel"`。也可右键菜单随时切换。
+`config.json`：`"character_id": "luoxi"|"zhuangfangyi"|"exusiai"`，`"art_style": "anime"|"pixel"`。右键可切换角色与画风。
 
 ---
 

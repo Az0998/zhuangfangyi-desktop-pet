@@ -18,10 +18,10 @@
     {
       "name": "tail",
       "parent": "root",
-      "x": -56.32,
-      "y": -105.0,
-      "rotation": -12,
-      "length": 40,
+      "x": -51.2,
+      "y": -96.0,
+      "rotation": -10,
+      "length": 36,
       "z": 5
     },
     {
@@ -39,26 +39,26 @@
     {
       "name": "ear_l",
       "parent": "body",
-      "x": -46.08,
-      "y": -234.0,
+      "x": -40.96,
+      "y": -228.0,
       "rotation": -8,
-      "length": 16,
+      "length": 14,
       "z": 40
     },
     {
       "name": "ear_r",
       "parent": "body",
-      "x": 46.08,
-      "y": -234.0,
+      "x": 40.96,
+      "y": -228.0,
       "rotation": 8,
-      "length": 16,
+      "length": 14,
       "z": 40
     },
     {
       "name": "torso",
       "parent": "body",
       "x": 0,
-      "y": -105.0,
+      "y": -102.00000000000001,
       "rotation": 0,
       "length": 10,
       "z": 21
@@ -67,7 +67,7 @@
       "name": "head",
       "parent": "body",
       "x": 0,
-      "y": -216.0,
+      "y": -210.0,
       "rotation": 0,
       "length": 10,
       "z": 30
@@ -102,19 +102,19 @@
     {
       "name": "arm_l",
       "parent": "body",
-      "x": -71.68,
-      "y": -135.0,
+      "x": -66.56,
+      "y": -126.0,
       "rotation": 0,
-      "length": 20,
+      "length": 18,
       "z": 15
     },
     {
       "name": "arm_r",
       "parent": "body",
-      "x": 71.68,
-      "y": -135.0,
+      "x": 66.56,
+      "y": -126.0,
       "rotation": 0,
-      "length": 20,
+      "length": 18,
       "z": 15
     },
     {
@@ -123,7 +123,7 @@
       "x": -20.48,
       "y": -24.0,
       "rotation": 0,
-      "length": 20,
+      "length": 16,
       "z": 10
     },
     {
@@ -132,7 +132,7 @@
       "x": 20.48,
       "y": -24.0,
       "rotation": 0,
-      "length": 20,
+      "length": 16,
       "z": 10
     }
   ]

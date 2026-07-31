@@ -1,7 +1,10 @@
 {
-  "width": 200,
-  "height": 260,
-  "origin": { "x": 100, "y": 200 },
+  "width": 276,
+  "height": 346,
+  "origin": {
+    "x": 138,
+    "y": 328
+  },
   "bones": [
     {
       "name": "root",
@@ -13,148 +16,124 @@
       "z": 0
     },
     {
-      "name": "torso",
+      "name": "tail",
+      "parent": "root",
+      "x": -32.800000000000004,
+      "y": -96.0,
+      "rotation": -10,
+      "length": 36,
+      "z": 5
+    },
+    {
+      "name": "body",
       "parent": "root",
       "x": 0,
-      "y": -36,
+      "y": 0,
       "rotation": 0,
-      "length": 40,
+      "length": 300,
       "z": 20,
-      "part": "torso",
-      "pivot_x": 40,
-      "pivot_y": 55
+      "part": "body",
+      "pivot_x": 82,
+      "pivot_y": 296
     },
     {
-      "name": "tail",
-      "parent": "torso",
-      "x": -18,
-      "y": 18,
-      "rotation": -25,
-      "length": 36,
-      "z": 5,
-      "part": "tail",
-      "pivot_x": 8,
-      "pivot_y": 8
+      "name": "ear_l",
+      "parent": "body",
+      "x": -26.240000000000002,
+      "y": -228.0,
+      "rotation": -8,
+      "length": 14,
+      "z": 40
     },
     {
-      "name": "arm_l",
-      "parent": "torso",
-      "x": -28,
-      "y": -18,
-      "rotation": 12,
-      "length": 28,
-      "z": 15,
-      "part": "arm_l",
-      "pivot_x": 12,
-      "pivot_y": 8
+      "name": "ear_r",
+      "parent": "body",
+      "x": 26.240000000000002,
+      "y": -228.0,
+      "rotation": 8,
+      "length": 14,
+      "z": 40
     },
     {
-      "name": "arm_r",
-      "parent": "torso",
-      "x": 28,
-      "y": -18,
-      "rotation": -12,
-      "length": 28,
-      "z": 25,
-      "part": "arm_r",
-      "pivot_x": 12,
-      "pivot_y": 8
-    },
-    {
-      "name": "leg_l",
-      "parent": "root",
-      "x": -12,
-      "y": -6,
-      "rotation": 6,
-      "length": 34,
-      "z": 12,
-      "part": "leg_l",
-      "pivot_x": 10,
-      "pivot_y": 4
-    },
-    {
-      "name": "leg_r",
-      "parent": "root",
-      "x": 12,
-      "y": -6,
-      "rotation": -6,
-      "length": 34,
-      "z": 12,
-      "part": "leg_r",
-      "pivot_x": 10,
-      "pivot_y": 4
+      "name": "torso",
+      "parent": "body",
+      "x": 0,
+      "y": -102.00000000000001,
+      "rotation": 0,
+      "length": 10,
+      "z": 21
     },
     {
       "name": "head",
-      "parent": "torso",
+      "parent": "body",
       "x": 0,
-      "y": -48,
+      "y": -210.0,
       "rotation": 0,
-      "length": 28,
-      "z": 40,
-      "part": "head",
-      "pivot_x": 42,
-      "pivot_y": 48
+      "length": 10,
+      "z": 30
     },
     {
       "name": "hood",
       "parent": "head",
       "x": 0,
-      "y": -6,
+      "y": 0,
       "rotation": 0,
-      "length": 10,
-      "z": 45,
-      "part": "hood",
-      "pivot_x": 48,
-      "pivot_y": 40
-    },
-    {
-      "name": "ear_l",
-      "parent": "head",
-      "x": -22,
-      "y": -28,
-      "rotation": -18,
-      "length": 18,
-      "z": 50,
-      "part": "ear_l",
-      "pivot_x": 12,
-      "pivot_y": 28
-    },
-    {
-      "name": "ear_r",
-      "parent": "head",
-      "x": 22,
-      "y": -28,
-      "rotation": 18,
-      "length": 18,
-      "z": 50,
-      "part": "ear_r",
-      "pivot_x": 12,
-      "pivot_y": 28
+      "length": 4,
+      "z": 29
     },
     {
       "name": "face",
       "parent": "head",
       "x": 0,
-      "y": 4,
+      "y": 8,
       "rotation": 0,
-      "length": 8,
-      "z": 55,
-      "part": "face",
-      "pivot_x": 36,
-      "pivot_y": 28
+      "length": 4,
+      "z": 31
     },
     {
       "name": "eyes",
       "parent": "face",
       "x": 0,
-      "y": -4,
+      "y": 0,
       "rotation": 0,
-      "length": 4,
-      "z": 60,
-      "part": "eyes",
-      "pivot_x": 28,
-      "pivot_y": 12
+      "length": 2,
+      "z": 32
+    },
+    {
+      "name": "arm_l",
+      "parent": "body",
+      "x": -42.64,
+      "y": -126.0,
+      "rotation": 0,
+      "length": 18,
+      "z": 15
+    },
+    {
+      "name": "arm_r",
+      "parent": "body",
+      "x": 42.64,
+      "y": -126.0,
+      "rotation": 0,
+      "length": 18,
+      "z": 15
+    },
+    {
+      "name": "leg_l",
+      "parent": "root",
+      "x": -13.120000000000001,
+      "y": -24.0,
+      "rotation": 0,
+      "length": 16,
+      "z": 10
+    },
+    {
+      "name": "leg_r",
+      "parent": "root",
+      "x": 13.120000000000001,
+      "y": -24.0,
+      "rotation": 0,
+      "length": 16,
+      "z": 10
     }
   ]
 }

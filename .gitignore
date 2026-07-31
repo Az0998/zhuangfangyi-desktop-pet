@@ -15,6 +15,7 @@ data/
 secrets.json
 characters/**/preview.png
 characters/**/ai_raw/
+assets/
 __pycache__/
 *.pyc
 
